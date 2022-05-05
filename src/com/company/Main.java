@@ -13,5 +13,15 @@ public class Main {
 			System.out.println(tree.get(i));
 		}
 		System.out.println("Size: " + tree.size());
+		System.out.println("---");
+		for (int i=1; i<10; i++){
+			if (i%2 == 0){
+				tree.delete(i);
+			}
+		}
+		for(int i=0; i<10; i++){
+			System.out.println(tree.get(i));
+		}
+		System.out.println("New size: " + tree.size());
 	}
 }
