@@ -55,4 +55,20 @@ public class BST<Key extends Comparable<Key>, Value>{
         return root;
     }
 
+    public void delete(Key key){
+        root = delete(root, key);
+    }
+
+    private MyNode delete(MyNode root, Key key){
+        if (root == null) return null;
+        int compare = key.compareTo(root.key);
+        if (compare < 0) root.left = delete(root.left, key);
+        else if (compare > 0) root.right = delete(root.right, key);
+        else {
+            if (root.right == null) return root.left;
+            if (root.left == null) return root.right;
+        }
+        root.n = size(root.left) + size(root.right) + 1;
+        return root;
+    }
 }
