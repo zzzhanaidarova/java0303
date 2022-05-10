@@ -4,9 +4,9 @@ import javax.xml.soap.Node;
 
 public class HashNode<Key, Value> {
     private HashNode head;
-    private Key key;
-    private Value value;
-    private HashNode next;
+    public Key key;
+    public Value value;
+    public HashNode next;
     public HashNode(Key key, Value value, HashNode next){
         this.key = key;
         this.value = value;
